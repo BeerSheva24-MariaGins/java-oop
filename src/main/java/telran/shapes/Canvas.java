@@ -1,6 +1,6 @@
 package telran.shapes;
 
-import java.util.Arrays;
+import telran.util.Arrays;
 
 public class Canvas implements Shape {
     Shape[] shapes; 
@@ -9,9 +9,8 @@ public class Canvas implements Shape {
         shapes = new Shape[0];
     }
 
-    void addShape(Shape shape) {
-        shapes = Arrays.copyOf(shapes, shapes.length + 1);
-        shapes[shapes.length - 1] = shape;
+    public void addShape(Shape shape) {
+        this.shapes = Arrays.insert(shapes, shapes.length, shape);
     }
 
     @Override
